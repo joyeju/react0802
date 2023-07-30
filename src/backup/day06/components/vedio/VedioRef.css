@@ -1,0 +1,23 @@
+/* 
+    현재사용하는 컴포넌트에서만 디자인 적용
+    컴포넌트 이름과 같아야 함 
+*/
+
+.vedio-container{
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.vedio-container video{
+    width: 100%;
+}
+.vedio-container .ctrl_btn{
+    position: absolute;
+    top:50%; 
+    left:50%; 
+    transform: translate(-50%, -50%);
+}
+.vedio-container button{
+    padding: 20px 10px;
+}

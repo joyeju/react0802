@@ -1,0 +1,21 @@
+.accordion-container{
+    width: 600px; 
+    margin: auto;
+}
+
+/* .accordion-container .content{
+     display: none;
+}
+.accordion-container .content.active{
+     display: block;
+} */
+
+.accordion-container .content{ 
+     background-color: sandybrown;
+     height: 0;
+     overflow: hidden;
+     transition:1s;
+}
+.accordion-container .content.active{
+     height: 200px;
+}
