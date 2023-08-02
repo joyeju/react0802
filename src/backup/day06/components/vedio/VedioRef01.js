@@ -16,7 +16,7 @@ const VedioRef = () => {
         console.log( document.querySelector('video'))
         const vedio = videoRef.current;
         vedio.pause();
-    } 
+    }
   return (
     <div className='vedio-container'>
         <video width={"400px"}  ref={videoRef}>

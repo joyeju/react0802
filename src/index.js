@@ -6,14 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthContextProvider }  from './contexts/AuthContext'
 import { ThemeContextProvider }  from './contexts/ThemeContext'
+import { DataProvider } from './contexts/DataContext';
+import Charts from './charts/Charts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <Charts />
       <BrowserRouter>
         <ThemeContextProvider>
           <AuthContextProvider>
-            <App />
+            <DataProvider>
+              <App />
+            </DataProvider>
           </AuthContextProvider>
         </ThemeContextProvider>
       </BrowserRouter>

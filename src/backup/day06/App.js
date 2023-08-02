@@ -1,6 +1,6 @@
 import React from 'react'
-//import Slider from './components/sliders/Slider' 
-//import MySwiper from './components/swiper/MySwiper'
+import Slider from './components/sliders/Slider' 
+import MySwiper from './components/swiper/MySwiper'
 import VedioRef from './components/vedio/VedioRef'
 import Todos from './todos/Todos'
 

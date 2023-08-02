@@ -7,15 +7,16 @@ import React, { useContext, useState , createContext} from 'react'
 
 const CountContext = createContext();// 나는 공유 데이터야 
 
+
 const App = () => {
   const [ count, setCount ] = useState(0);
 
   return (
-     <CountContext.Provider value={{count, setCount}}>
+     <CountContextProvider>
         <div>
             <SubComp1 count={count} setCount={setCount} />
         </div>
-     </CountContext.Provider>
+     </CountContextProvider>
   )
 }
 

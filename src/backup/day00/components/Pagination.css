@@ -1,0 +1,22 @@
+.pager-container{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+}
+.pagers{
+    display: flex;
+    gap: 5px;
+}
+.pagers li{
+    width: 40px; 
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border:1px solid black;
+    border-radius: 5px;
+}
+
+.pagers li.active{
+    background-color: black;
+    color:white; 
+}

@@ -1,11 +1,13 @@
-import React from 'react'
-import { NavLink, Link } from 'react-router-dom';
+import React, {useContext} from 'react'
+import { NavLink } from 'react-router-dom';
 import './NavBar.css'
+import { ThemeContext } from '../contexts/ThemeContext'
 
 const  navs = [ "main" , "coins" ,  "posts", "about" , "contact", "login"];
 const NavBar = () => {
+  const { darkmode, setDarkMode }= useContext(ThemeContext);
   return (
-    <nav>
+    <nav className={ darkmode ? "lnb darkmode" : "lnb"}>
       <ul>
         {
           navs.length &&  navs.map((nav)=>(
@@ -15,6 +17,16 @@ const NavBar = () => {
           ))
         }
       </ul>
+
+      <div  className='darkmodeBtn'>
+            <button 
+                onClick={()=>setDarkMode(!darkmode)}
+                className={ darkmode ? "darkmode" : ""}
+                style={{ border : darkmode ? `1px solid white` : `1px solid black`}}
+            >
+              {!darkmode ? "dark":"normal"}
+            </button>
+      </div>
     </nav>
   )
 }

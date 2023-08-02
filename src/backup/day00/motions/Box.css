@@ -1,0 +1,11 @@
+.outBox{
+    width:200px; 
+    height:200px;
+    border:1px solid black; 
+    margin: 100px; 
+}
+.innerBox{
+    width:200px; 
+    height:200px;
+    background-color: orange; 
+}

@@ -1,5 +1,7 @@
 footer{
-
+    /* position: relative; */
+    position: fixed;
+    bottom:0;
 }
 .footer-container{
     height: 100px;

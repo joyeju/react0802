@@ -1,0 +1,12 @@
+.coins-container{
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.coin-box{
+    width: 300px ;
+    height: 400px;
+    margin:20px;
+    border:1px solid black; 
+    box-sizing: border-box;
+}

@@ -18,8 +18,6 @@ const Slider = () => {
     }
   return (
     <>
-   
-
     <div className='slier-container'>
         <BsArrowLeftSquareFill   
                 size="2rem"

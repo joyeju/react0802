@@ -1,0 +1,18 @@
+.sideber-container{
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    background-color: skyblue;
+    z-index: 99;
+    right:-300px;  top:0;
+    transition: 1s;
+}
+
+.sideBtn{
+    position: absolute;
+    left:-20px;
+}
+
+.sideber-container.active{
+    right:0;
+}

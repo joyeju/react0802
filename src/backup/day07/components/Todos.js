@@ -1,39 +1,53 @@
-import axios from 'axios';
 import React, {useState , useEffect, useRef } from 'react'
 //// localhost:3500/todos
+import axios from 'axios'
+
 const Todos = () => {
     const [todos, setTodos]=useState([])
     const TODO_URL = `http://localhost:3500/todos`
-    const [isLoading,setIsLoading] = useState(true);
-    //loading 제어하는 state
+    //const makeup = `http://makeup-api.herokuapp.com/api/v1/products.json`
 
     const todoRef=useRef();
     const [todo, setTodo] =useState();
 
     const getHandle = async ()=>{
-         // const rows = await fetch(TODO_URL);
+        // const rows = await fetch(TODO_URL);
         // const datas = await rows.json();
         // setTodos(datas)
-       
-        const rows = await axios.get(TODO_URL);
-        setTodos(rows.data);
 
-        setIsLoading(false);
-        
+        // fetch(TODO_URL)
+        // .then(res=>res.json()) // axios 생략
+        // .then( res=>{
+        //     //console.log(res)
+        //     setTodos(res);
+        // })
+
+        axios({
+            method:'get',
+            url: TODO_URL,
+        }).then(res=>setTodos(res.data)); // res.data 사용
     }
     const postHandle = async ()=>{
-        const rows =await axios.post(TODO_URL,{todo});
-        setTodos(rows.data);
-
-        setTodo("")
+        axios({
+            method:'post',
+            url: TODO_URL,
+            data : {todo} // body, heades를 알아서 지정
+        }).then(res=>setTodos(res.data)); 
     }
     const putHandle = async (id)=>{
-       const rows = await axios.put(TODO_URL,{id});
-       setTodos(rows.data);
+        axios({
+            method:'put',
+            url: TODO_URL,
+            data : {id} // body, heades를 알아서 지정
+        }).then(res=>setTodos(res.data)); 
     }
+
     const deleteHandle = async (id)=>{
-        const rows =await axios.delete(`${TODO_URL}/${id}`)
-        setTodos(rows.data);
+        axios({
+            method:'delete',
+            url: `${TODO_URL}/${id}`,
+            data : {todo} // body, heades를 알아서 지정
+        }).then(res=>setTodos(res.data)); 
     }
 
     // 화면이 Loading될때 처리되는 함수
@@ -52,8 +66,9 @@ const Todos = () => {
         </div>
         
         {/* <button  onClick={ ()=> putHandle(1) }>PUT</button> */}
+        
+
         {
-            isLoading ? <div>Loading...</div> : 
             !todos.length ? <div>데이터를 찾을 수 없습니다.</div> : 
             <ul>
                 {
@@ -66,7 +81,7 @@ const Todos = () => {
                             />
                             <label htmlFor={`complete${todo.id}`}
                                    style={{
-                                    textDecoration : todo.checked ? "underline" : "none"
+                                    textDecoration : todo.checked ? "line-through" : "none"
                                    }}
                             >{todo.todo}</label>
                             <button  onClick={ ()=> deleteHandle(todo.id) }>DELETE</button>
@@ -80,3 +95,4 @@ const Todos = () => {
 }
 
 export default Todos
+

@@ -1,0 +1,6 @@
+li{
+    margin-bottom:50px;
+}
+li>*{
+    display: block; 
+}

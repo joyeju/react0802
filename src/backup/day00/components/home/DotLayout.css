@@ -1,0 +1,34 @@
+html, body{
+    scroll-behavior: smooth;
+}
+.pageIndecator{
+    position: fixed;
+    right: 150px; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    /* font-size: 0;  */
+}
+
+.pageIndecator a{
+    display: block;
+    padding: 7px; 
+    border-radius: 20px;
+    border:1px solid red; 
+    margin: 5px;
+}
+
+.pageIndecator a::after{ 
+    content:"";
+    padding: 5px;
+    background-color: red;
+    border-radius: 10px;
+    display: none;
+}
+
+.pageIndecator a.active::after{
+    display: block;
+}

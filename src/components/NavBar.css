@@ -1,0 +1,17 @@
+.lnb,
+.lnb>ul{
+    display: flex;
+    /* justify-content: center; */
+}
+
+.lnb{
+    justify-content: space-between;
+}
+.lnb a{
+     display: block;
+     padding: 5px 10px;
+}
+
+.lnb a.active{
+    border-bottom: 2px solid salmon;
+}
